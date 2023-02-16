@@ -5,7 +5,7 @@ require("../../Core.js");
 module.exports = {
   name: "setppgc",
   alias: ["setgcpp", "setppgroup"],
-  desc: "Set a group profile picture.",
+  desc: "Legen Sie ein Gruppenprofilbild fest.",
   category: "Group",
   usage: `Tag an Image and type -setppgc}`,
   react: "🍁",
@@ -15,15 +15,15 @@ module.exports = {
     { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, mime, quoted }
   ) => {
     if (!isAdmin && !isBotAdmin)
-      return Miku.sendMessage(m.from, { text: `*Bot* and *${pushName}* both must be Admin in order to use this Command!` }, { quoted: m });
+      return Miku.sendMessage(m.from, { text: `*Bot* und *${pushName}* bot muss Admin sein, um diesen Befehl zu verwenden!` }, { quoted: m });
 
     if (!/image/.test(mime))
       return Miku.sendMessage(
         m.from,
         {
-          text: `Send/Reply Image With Caption ${
+          text: `Bild mit Bildunterschrift senden/antworten ${
             prefix + "setgcpp"
-          } to change the Profile Pic of this group.`,
+          } um das Profilbild dieser Gruppe zu ändern.`,
         },
         { quoted: m }
       );
@@ -31,9 +31,9 @@ module.exports = {
       return Miku.sendMessage(
         m.from,
         {
-          text: `Send/Reply Image With Caption ${
+          text: `Bild mit Bildunterschrift senden/antworten ${
             prefix + "setgcpp"
-          } to change the Profile Pic of this group.`,
+          } um das Profilbild dieser Gruppe zu ändern.`,
         },
         { quoted: m }
       );
@@ -60,7 +60,8 @@ module.exports = {
 
     Miku.sendMessage(
         m.from,
-        { image: {url: ppgc},caption: `\nGroup Profile Picture has been updated Successfully by *${pushName}* !` },
+        { image: {url: ppgc},caption: `\
+        Profilbild wurde erfolgreich aktualisiert von *${pushName}* !` },
         { quoted: m }
       )
   },
