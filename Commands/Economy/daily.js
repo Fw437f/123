@@ -17,7 +17,7 @@ module.exports = {
       m, 
       { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,eco,ty} 
     ) => {
-         if (!m.isGroup) return Miku.sendMessage(m.from, { text: '*Group command ' }, { quoted: m });
+         if (!m.isGroup) return Miku.sendMessage(m.from, { text: '*Gruppenbefehl*' }, { quoted: m });
          let user = m.sender 
          const cara = "cara"
          const daily  = await eco.daily(user, cara, 500); //give 500 for daily, can be changed
@@ -38,7 +38,7 @@ module.exports = {
               ];
               let buttonMessage = {
                 image: fs.readFileSync("./Assets/Img/card.png"), 
-                caption: `\n🧧 You already claimed your daily revenue today, Come back in ${daily.cdL} to claim again 🫡`,
+                caption: `\n🧧 Sie haben heute bereits Ihren Tagesumsatz beansprucht, kommen Sie wieder  ${daily.cdL} wieder abzuholen 🫡`,
                 footer: `*${botName}*`,
                 buttons: buttons,
                 type: 4
@@ -50,7 +50,7 @@ module.exports = {
    
               return Miku.sendMessage( 
                 m.from, 
-                { text: `You have successfully claimed your daily revenue ${daily.amount} 💴 today 🎉.` }, 
+                { text: `Sie haben Ihren Tagesumsatz erfolgreich beansprucht ${daily.amount} 💴 Heute 🎉.` }, 
                 { quoted: m } 
             )}
       }
