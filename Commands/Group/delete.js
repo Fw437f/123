@@ -1,7 +1,7 @@
 module.exports = {
   name: "delete",
   alias: ["del"],
-  desc: "To delete a message",
+  desc: "Um eine Nachricht zu löschen",
   category: "Group",
   usage: `Tag a message and type *del*`,
   react: "🍁",
@@ -9,14 +9,14 @@ module.exports = {
     if (!m.quoted)
       return Miku.sendMessage(
         m.from,
-        { text: `Please mention a message to delete !` },
+        { text: `Bitte erwähnen Sie eine zu löschende Nachricht !` },
         { quoted: m }
       );
     if (!isAdmin && !isBotAdmin)
       return Miku.sendMessage(
         m.from,
         {
-          text: `Bot and *${pushName}* both must be admin in order to use this command !`,
+          text: `Bot und *${pushName}* bot muss Administrator sein, um diesen Befehl verwenden zu können !`,
         },
         { quoted: m }
       );
