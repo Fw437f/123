@@ -3,14 +3,14 @@ const axios = require("axios");
 module.exports = {
   name: "iguser",
   alias: ["instagramuser", "instauser", "iginfo"],
-  desc: "To get details of an instagram user",
+  desc: "Um Details eines Instagram-Benutzers zu erhalten",
   category: "Essentials",
   usage: "iguser <instagram username>",
   react: "🍁",
   start: async (Miku, m, { text, prefix, pushName,args }) => {
     if (!text)
       return m.reply(
-        `Please provide me a instagram username ${pushName} senpai !`
+        `Bitte geben Sie mir einen Instagram-Benutzernamen ${pushName} senpai !`
       );
     let igSearchTeram = text;
     try {
@@ -36,7 +36,7 @@ module.exports = {
     } catch (err) {
       console.log(err);
       return m.reply(
-        `An error occurd ! Please check instagram username ${pushName} senpai !`
+        `Ein Fehler ist aufgetreten! Bitte überprüfen Sie den Instagram-Benutzernamen ${pushName} senpai !`
       );
     }
   },
