@@ -9,7 +9,7 @@ const fs = require("fs");
  module.exports = { 
 
     name: "gamble",  
-    desc: "gamble money.", 
+    desc: "Geld spielen.", 
     alias: ["gamble"],
     category: "Economy",  
     react: "💸", 
@@ -36,11 +36,11 @@ const fs = require("fs");
 				`Usage:  *${prefix}gamble 100 left/right/up/down*\n\nExample:  *${prefix}gamble 100 left*`
 			);
 
-            if (!value) return m.reply("*Please, specify the amount you are gambling with!*");
-            if (!opp) return m.reply("*Specify the direction you are betting on!*");
-            if (!gg) return m.reply("*Check your text please, You are using the command in a wrong way*")
-            if (g == false) return m.reply(`*You don't have sufficient 🪙 Diamond to gamble with*`);
-        if (a == true) return m.reply(`*Sorry ${m.pushName}, you can only gamble with more than 🪙50.*`);
+            if (!value) return m.reply("*Bitte geben Sie den Betrag an, mit dem Sie spielen!*");
+            if (!opp) return m.reply("*Geben Sie die Richtung an, auf die Sie wetten!*");
+            if (!gg) return m.reply("*Bitte überprüfen Sie Ihren Text, Sie verwenden den Befehl falsch*")
+            if (g == false) return m.reply(`*Sie haben nicht genug 🪙 Diamant zum Spielen*`);
+        if (a == true) return m.reply(`*Verzeihung ${m.pushName}, Sie können nur mit mehr als 🪙50 spielen.*`);
         if ( r == opp){
            let give = await eco.give(user , cara, twice);
            let buttons = [
@@ -58,7 +58,7 @@ const fs = require("fs");
           ];
           let buttonMessage = {
             image: fs.readFileSync("./Assets/Img/card.png"), 
-            caption: `*📈 You won 💴 ${twice}*`,
+            caption: `*📈 Du hast gewonnen 💴 ${twice}*`,
             footer: `*${botName}*`,
             buttons: buttons,
             type: 4
@@ -82,7 +82,7 @@ const fs = require("fs");
             },
           ];
           let buttonMessage = {
-            text: `*📉 You lost 💴 ${texts[0]}*`,
+            text: `*📉 Du hast verloren 💴 ${texts[0]}*`,
             footer: `*${botName}*`,
             buttons: buttons,
             type: 4
