@@ -8,7 +8,7 @@ const { mk } = require("../../Database/dataschema.js");
 module.exports = {
     name: "antilinkgc",
     alias: ["alinkgc","antilink"],
-    desc: "Enable or disable the antilink feature in a group",
+    desc: "Aktivieren oder deaktivieren Sie die Antilink-Funktion in einer Gruppe",
     category: "Group",
     usage: "antilinkgc [on/off]",
     react: "🔒",
@@ -21,7 +21,7 @@ module.exports = {
         return Miku.sendMessage(
           m.from,
           {
-            text: `Bot and *${pushName}* both must be admin in order to use this command !`,
+            text: `Bot and *${pushName}* bot muss Administrator sein, um diesen Befehl verwenden zu können !`,
           },
           { quoted: m }
         );
@@ -40,27 +40,27 @@ module.exports = {
           Miku.sendMessage(
             m.from,
             {
-              text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`,
+              text: `\`\`\`「 Warnung 」\`\`\`\n\nAntilink-System aktiviert!`,
               contextInfo: { mentionedJid: mems },
             },
             { quoted: m }
           );
           return Miku.sendMessage(
             m.from,
-            { text: `*Successfully activated antilink*` },
+            { text: `*Antilink erfolgreich aktiviert*` },
             { quoted: m }
           );
         } else {
           if (checkdata.antilink == "true")
             return Miku.sendMessage(
                 m.from,
-                { text: `*Already activated.*` },
+                { text: `*Bereits aktiviert.*` },
                 { quoted: m }
               );
           await mk.updateOne({ id: m.from }, { antilink: "true" });
           return Miku.sendMessage(
             m.from,
-            { text: `*Antilink is enabled in this group*` },
+            { text: `*Antilink ist in dieser Gruppe aktiviert*` },
             { quoted: m }
           );
         }
@@ -69,19 +69,19 @@ module.exports = {
           await new mk({ id: m.from, antilink: "false" }).save();
           return Miku.sendMessage(
             m.from,
-            { text: `*Successfully deactivated antilink*` },
+            { text: `*Antilink erfolgreich deaktiviert*` },
             { quoted: m }
           );
         } else {
           if (checkdata.antilink == "false") return Miku.sendMessage(
             m.from,
-            { text: `*Already deactivated.*` },
+            { text: `*Bereits deaktiviert.*` },
             { quoted: m }
           );
           await mk.updateOne({ id: m.from }, { antilink: "false" });
           return Miku.sendMessage(
             m.from,
-            { text: `*Antilink is disabled in this group*` },
+            { text: `*Antilink ist in dieser Gruppe deaktiviert*` },
             { quoted: m }
           );
         }
@@ -100,7 +100,7 @@ module.exports = {
         ];
         let bmffg = {
           image: {url : botImage6} ,
-          caption: `\n*「  Group Altilink configuration  」*\n\nPlease click the button below\n*On / Off*\n`,
+          caption: `\n*「  Gruppen-Altilink-Konfiguration  」*\n\nBitte klicken Sie auf die Schaltfläche unten\n*On / Off*\n`,
           footer: `*${botName}*`,
           buttons: buttonsntilink,
           headerType: 4,
