@@ -74,7 +74,15 @@ Here's the list of my Commands.\n
 ├・💫 ɪɢᴅʟ, ɪɢᴅʟ2, 
 ├・💫 ᴘʟᴀʏʟɪꜱᴛ, ᴘʟᴀʏ, 
 ├・💫 ʏᴛᴀᴜᴅɪᴏ, ʏᴛᴠɪᴅᴇᴏ, 
-├・💫 ʏᴛꜱ
+├・💫 ʏᴛꜱ「 System Info 」
+    
+    Speed : ${latensie.toFixed(4)} miliseconds
+    Up Time : ${runtime(process.uptime())}
+    Bot Name : ${global.BotName}
+    Owner Name : ${global.OwnerName}
+    𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : Amazon AWS
+    𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
+    
 ├
 ╰──────────────────╯
 ╭────ꕥ Search ꕥ────╮
@@ -246,7 +254,17 @@ textHelpMenu += `╭────ꕥ NSFW ꕥ────╮
 textHelpMenu +=`*🔰  ${botName}  🔰*
  _Powered By:_ *✨️MAGIC✨️*
 🎀 To use any of these commands type 
-" *${prefix}Command name* ".\n`
+" *${prefix}Command name* ".
+
+「 System Info 」
+    
+    Speed : ${latensie.toFixed(4)} miliseconds
+    Up Time : ${runtime(process.uptime())}
+    Bot Name : ${global.BotName}
+    Owner Name : ${global.OwnerName}
+    𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : Amazon AWS
+    𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
+    \n`
 
 let buttons = [
     {
