@@ -28,9 +28,9 @@ if (args[0]) {
         } else {
 
 let textHelpMenu = `Konnichiwa *${pushName}* Senpai,
-I am *${botName}*, a bot developed by *✨️MAGIC✨️*.
-🎀 My prefix is: *${prefix}*
-Here's the list of my Commands.\n
+Ich bin *${botName}*, ein Bot entwickelt von *✨️MAGIC✨️*.
+🎀 Mein prefix ist: *${prefix}*
+Hier ist die Liste meiner Befehle.\n
              
 ╭────ꕥ Core ꕥ────╮
 ├
@@ -241,8 +241,8 @@ textHelpMenu += `╭────ꕥ NSFW ꕥ────╮
 }
           
 textHelpMenu +=`*🔰  ${botName}  🔰*
- _Powered By:_ *✨️MAGIC✨️*
-🎀 To use any of these commands type 
+ _Bereitgestellt von:_ *✨️MAGIC✨️*
+🎀 Um einen dieser Befehle zu verwenden, geben Sie 
 " *${prefix}Command name* ".\n`
 
 let buttons = [
