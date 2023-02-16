@@ -8,7 +8,7 @@ const { mk } = require("../../Database/dataschema.js");
 module.exports = {
     name: "chatbotgc",
     alias: ["autochat","autoreply","chatbotgroup"],
-    desc: "Enable or disable the autoreply feature in a group",
+    desc: "Aktivieren oder deaktivieren Sie die automatische Antwortfunktion in einer Gruppe",
     category: "Group",
     usage: "chatbotgc [on/off]",
     react: "🎀",
@@ -22,7 +22,7 @@ module.exports = {
         return Miku.sendMessage(
           m.from,
           {
-            text: `*${pushName}* must be *Admin* to enable Chatbot !`,
+            text: `*${pushName}* muss *Admin* sein, um Chatbot zu aktivieren !`,
           },
           { quoted: m }
         );
@@ -41,27 +41,27 @@ module.exports = {
           Miku.sendMessage(
             m.from,
             {
-              text: `*Group Chatbot Activated! *\n\nTo use it mention bot's message with your message.`,
+              text: `*Gruppen-Chatbot aktiviert! *\n\nUm es zu verwenden, erwähnen Sie die Nachricht des Bots mit Ihrer Nachricht.`,
               contextInfo: { mentionedJid: mems },
             },
             { quoted: m }
           );
           return Miku.sendMessage(
             m.from,
-            { text: `*Group Chatbot Activated !*\n\nTo use it mention bot's message with your message.` },
+            { text: `*Gruppen-Chatbot aktiviert !*\n\nUm es zu verwenden, erwähnen Sie die Nachricht des Bots mit Ihrer Nachricht.` },
             { quoted: m }
           );
         } else {
           if (checkdata.chatBot == "true")
             return Miku.sendMessage(
                 m.from,
-                { text: `*Already activated.*\n\nTo use it mention bot's message with your message.` },
+                { text: `*Bereits aktiviert.*\n\nUm es zu verwenden, erwähnen Sie die Nachricht des Bots mit Ihrer Nachricht.` },
                 { quoted: m }
               );
           await mk.updateOne({ id: m.from }, { chatBot: "true" });
           return Miku.sendMessage(
             m.from,
-            { text: `*Group Chatbot Activated !*` },
+            { text: `*Gruppen-Chatbot aktiviert !*` },
             { quoted: m }
           );
         }
@@ -70,19 +70,19 @@ module.exports = {
           await new mk({ id: m.from, chatBot: "false" }).save();
           return Miku.sendMessage(
             m.from,
-            { text: `*Group Chatbot De-Activated!*` },
+            { text: `*Gruppen-Chatbot deaktiviert!*` },
             { quoted: m }
           );
         } else {
           if (checkdata.chatBot == "false") return Miku.sendMessage(
             m.from,
-            { text: `*Already deactivated.*` },
+            { text: `*Bereits deaktiviert.*` },
             { quoted: m }
           );
           await mk.updateOne({ id: m.from }, { chatBot: "false" });
           return Miku.sendMessage(
             m.from,
-            { text: `*Group Chatbot De-Activated !*` },
+            { text: `*Gruppen-Chatbot deaktiviert !*` },
             { quoted: m }
           );
         }
@@ -101,7 +101,7 @@ module.exports = {
         ];
         let bmffg = {
           image: {url : botImage4} ,
-          caption: `\n *「  Group Chatbot configuration  」*\n\nPlease click the button below\n*On / Off*\n`,
+          caption: `\n *「  Gruppen-Chatbot-Konfiguration  」*\n\nBitte klicken Sie auf die Schaltfläche unten\n*On / Off*\n`,
           footer: `*${botName}*`,
           buttons: buttonsntilink,
           headerType: 4,
