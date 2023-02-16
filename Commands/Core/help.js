@@ -266,4 +266,3 @@ let buttons = [
 }
   }
 }
-Footer
