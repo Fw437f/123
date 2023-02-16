@@ -6,7 +6,7 @@ const { mku } = require("../../Database/dataschema.js");
 module.exports = { 
 
     name: "owner", 
-    desc: "To view the list of current Mods", 
+    desc: "Um die Liste der aktuellen Mods anzuzeigen", 
     alias: ["modlist","mods","mod"],
     category: "Core", 
     usage: "owner", 
@@ -34,7 +34,7 @@ module.exports = {
             let textM = `             🧣  *${botName} Mods*  🧣\n\n`;
 
             if(ownerList.length == 0){
-              textM = "*No Mods Added !*";
+              textM = "*Keine Mods hinzugefügt !*";
             }
 
             for (var i = 0; i < ownerList.length; i++) {
@@ -48,7 +48,7 @@ module.exports = {
             } 
             
             if(modlistString != "" || ownerList.length != 0){
-               textM += `\n\n📛 *Don't Spam them to avoid Blocking !*\n\n🎀 For any help, type *${prefix}owner* and ask him.\n\n*💫 Thanks for using ${botName}. 💫*\n`
+               textM += `\n\n📛 *Spammen Sie sie nicht, um eine Blockierung zu vermeiden !*\n\n🎀 Für jede Hilfe, Geben Sie *${prefix}owner* und fragen Sie ihm.\n\n*💫 Vielen Dank für die Verwendung ${botName}. 💫*\n`
             }
             
             return Miku.sendMessage( 
@@ -59,7 +59,7 @@ module.exports = {
 
           } catch (err) { 
             console.log(err);
-            return Miku.sendMessage(m.from, { text: `An internal error occurred while fetching the mod list.` }, { quoted: m });
+            return Miku.sendMessage(m.from, { text: `Beim Abrufen der Mod-Liste ist ein interner Fehler aufgetreten.` }, { quoted: m });
           } 
         }, 
     }
