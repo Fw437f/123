@@ -5,7 +5,7 @@ require("../../Core.js");
 module.exports = {
   name: "setgcname",
   alias: ["setnamegc", "changegcname","setgroupname","changegroupname"],
-  desc: "Change the group name",
+  desc: "Ändern Sie den Gruppennamen",
   category: "Group",
   usage: `setgcname <New group name>`,
   react: "🍁",
@@ -15,9 +15,9 @@ module.exports = {
     { text, prefix, isBotAdmin, isAdmin, pushName, metadata, args,mime }
   ) => {
     if (!isAdmin && !isBotAdmin)
-        return Miku.sendMessage(m.from, { text: `*Bot* and *${pushName}* both must be *Admin* in order to use this Command!` }, { quoted: m });
+        return Miku.sendMessage(m.from, { text: `*Bot* und *${pushName}* bot muss *Admin* sein, um diesen Befehl zu verwenden!` }, { quoted: m });
     if (!args[0])
-        return Miku.sendMessage(m.from, { text: `Please provide a new group name !` }, { quoted: m });
+        return Miku.sendMessage(m.from, { text: `Bitte geben Sie einen neuen Gruppennamen an !` }, { quoted: m });
     
     var newGCName = args.join(" ");
     var oldGCName = metadata.subject;
@@ -32,7 +32,7 @@ module.exports = {
         m.from,
         {
           image: { url: ppgc, mimetype: "image/jpeg" },
-          caption: `*『 Group Name Changed 』*\n\n_🔶 Old Name:_\n*${oldGCName}*\n\n_🔷 New Name:_\n*${args.join(" ")}*`,
+          caption: `*『 Gruppenname geändert 』*\n\n_🔶 Alte Name:_\n*${oldGCName}*\n\n_🔷 Neu name:_\n*${args.join(" ")}*`,
         },
         { quoted: m }
       )).catch((err) => replay(jsonformat(err)))
