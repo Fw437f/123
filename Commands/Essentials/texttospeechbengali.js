@@ -3,7 +3,7 @@ const ttt = require('google-tts-api');
 module.exports = {
     name: "saybengali",
     alias: ["speakbengali","saybengali" ,"sayinbengali","saybangla","speakbangla","sayinbangla"],
-    desc: "Say somethong using bot in Bengali accent.",
+    desc: "Sagen Sie etwas mit Bot in bengalischem Akzent.",
     usage: "saybengali <text>",
     react: "🍁",
     category: "Essentials",
@@ -17,13 +17,13 @@ module.exports = {
             message = args.join(' ');
           }
           else{
-            message = `Amay bolar jonno kono text dao ${pushName} senpai !`;
+            message = `Gib mir einen Text zu erzählen ${pushName} senpai !`;
           }
 
         const texttospeechurl = ttt.getAudioUrl(message, {lang: "bn", slow: false, host: "https://translate.google.com",});
         
             Miku.sendMessage(m.from, { audio: {url: texttospeechurl} ,mimetype: 'audio/mpeg' }, { quoted: m }).catch(e => {
-                m.reply(`An error Occurd !`);
+                m.reply(`Ein Fehler ist aufgetreten !`);
             });
     }
 }
