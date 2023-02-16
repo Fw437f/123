@@ -8,7 +8,7 @@ const fs = require("fs");
 module.exports = { 
 
     name: "bank",  
-    desc: "shows bank amount.", 
+    desc: "Zeigt Bankbetrag.", 
     alias: ["bank"],
     category: "Economy",  
     react: "🏦", 
@@ -21,19 +21,19 @@ module.exports = {
         const user = m.sender
     const cara = "cara"
     const balance = await eco.balance(user, cara);
-     var role = 'brokie😭'
+     var role = 'Brokie😭'
      if (`${balance.bank}`           <= 1000){
-        role = 'broke😭'
+        role = 'Pleite😭'
       } else if (`${balance.bank}`   <= 10000){
-            role = 'Poor😢'
+            role = 'Arm😢'
         } else if (`${balance.bank}` <= 50000){
-            role = 'Average💸'
+            role = 'Durchschnitt💸'
         } else if (`${balance.bank}` <= 1000000){
-            role = 'Rich💸💰'
+            role = 'Reich💸💰'
         } else if (`${balance.bank}` <= 10000000){
-            role = 'Millionaire🤑'
+            role = 'Millionär🤑'
         } else if (`${balance.bank}` <= 90000000){
-            role = 'Billionaire🤑🤑'
+            role = 'Milliardär🤑🤑'
         }    
         let buttons = [
             {
@@ -50,7 +50,7 @@ module.exports = {
           ];
           let buttonMessage = {
             image: fs.readFileSync("./Assets/Img/card2.png"), 
-            caption: `\n🏦 *${pushname}'s Bank*:\n\n🪙 Balance: ${balance.bank}/${balance.bankCapacity}\n\n\n*Wealth: ${role}*\n`,
+            caption: `\n🏦 *${pushname}'s Bank*:\n\n🪙 Gleichgewicht: ${balance.bank}/${balance.bankCapacity}\n\n\n*Vermögen: ${role}*\n`,
             footer: `*${botName}*`,
             buttons: buttons,
             type: 4
