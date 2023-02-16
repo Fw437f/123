@@ -3,7 +3,7 @@ const moment = require('moment-timezone')
 module.exports = {
     name: "gcinfo",
     alias: ["groupinfo"],
-    desc: "Change the group description",
+    desc: "Ändern Sie die Gruppenbeschreibung",
     category: "Group",
     usage: `setdesc <New group description>`,
     react: "🍁",
@@ -21,9 +21,9 @@ module.exports = {
           const groupAdmins = m.isGroup ? await participants.filter(v => v.admin !== null).map(v => v.id) : ''
           const groupOwner = m.isGroup ? metadata.owner : ''
           
-          desc = metadata.desc ? metadata.desc : 'No Description'
+          desc = metadata.desc ? metadata.desc : 'Keine Beschreibung'
 
-          let txt = `                 *『 Group Info 』*\n\n_🎀 Group Name:_ *${metadata.subject}*\n\n_🧩 Group Description:_\n${desc}\n\n_👑 Group Owner:_ @${metadata.owner.split('@')[0]}\n_💫 Group Created on:_ *${moment(`${metadata.creation}` * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY')}*\n_📛 Total Admins:_ *${groupAdmins.length}*\n_🎈 Total Participants:_ *${metadata.participants.length}*\n`;
+          let txt = `                 *『 Gruppen Info 』*\n\n_🎀 Gruppen Name:_ *${metadata.subject}*\n\n_🧩 Gruppenbeschreibung:_\n${desc}\n\n_👑 Gruppenbesitzer:_ @${metadata.owner.split('@')[0]}\n_💫 Gruppe Erstellt am:_ *${moment(`${metadata.creation}` * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY')}*\n_📛 Insgesamt Administratoren:_ *${groupAdmins.length}*\n_🎈 Teilnehmer insgesamt:_ *${metadata.participants.length}*\n`;
         
 
           await Miku.sendMessage(
