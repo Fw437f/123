@@ -8,7 +8,7 @@ require("../../Database/dataschema.js");
 module.exports = { 
 
     name: "wallet",  
-    desc: "Shows Wallet.",
+    desc: "Zeigt Geldbörse.",
     alias: ["wallet"], 
     category: "Economy",  
     react: "💲", 
@@ -23,7 +23,7 @@ module.exports = {
          let buttons = [
             {
               buttonId: `${prefix}deposit`,
-              buttonText: { displayText: "Deposit 💴" },
+              buttonText: { displayText: "Kaution 💴" },
               type: 1,
             },
             {
@@ -35,7 +35,7 @@ module.exports = {
           ];
           let buttonMessage = {
             image: fs.readFileSync("./Assets/Img/card.png"), 
-            caption: `\n💳 *${m.pushName}'s Wallet:*\n\n_💴 ${balance.wallet}_`,
+            caption: `\n💳 *${m.pushName}'s Geldbörse:*\n\n_💴 ${balance.wallet}_`,
             footer: `*${botName}*`,
             buttons: buttons,
             type: 4
