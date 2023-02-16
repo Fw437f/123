@@ -8,7 +8,7 @@ const { mk } = require("../../Database/dataschema.js");
 module.exports = {
     name: "welcome",
     alias: ["welcomemess","welcomeswitch"],
-    desc: "Enable or disable Welcome/Goodbye messages in a group",
+    desc: "Willkommens-/Auf Wiedersehensnachrichten in einer Gruppe aktivieren oder deaktivieren",
     category: "Group",
     usage: "welcome [on/off]",
     react: "🎀",
@@ -22,7 +22,7 @@ module.exports = {
         return Miku.sendMessage(
           m.from,
           {
-            text: `*${pushName}* must be *Admin* to turn ON/OFF *Welcome/Goodbye* mesages !`,
+            text: `*${pushName}* muss *Admin* sein, um  ON/OFF *Welcome/Goodbye* nachricht !`,
           },
           { quoted: m }
         );
@@ -41,14 +41,14 @@ module.exports = {
           Miku.sendMessage(
             m.from,
             {
-              text: `*Welcome/Goodbye* messages has been *Activated* in this group!`,
+              text: `*Willkommens-/Auf Wiedersehens*-Nachrichten wurden in dieser Gruppe *aktiviert*!!`,
               contextInfo: { mentionedJid: mems },
             },
             { quoted: m }
           );
           return Miku.sendMessage(
             m.from,
-            { text: `*Welcome/Goodbye* messages has been *Activated* in this group!` },
+            { text: `*Willkommens-/Auf Wiedersehens*-Nachrichten wurden in dieser Gruppe *Aktiviert*!` },
             { quoted: m }
           );
         } else {
