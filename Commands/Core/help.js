@@ -28,8 +28,11 @@ if (args[0]) {
         } else {
 
 let textHelpMenu = `Konnichiwa *${pushName}* Senpai,
+
 Ich bin *${botName}*, ein Bot entwickelt von *✨️MAGIC✨️*.
+
 🎀 Mein prefix ist: *${prefix}*
+
 Hier ist die Liste meiner Befehle.\n
              
 ╭────ꕥ Core ꕥ────╮
