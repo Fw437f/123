@@ -4,7 +4,7 @@ require("../../Core.js");
 module.exports = {
   name: "announce",
   alias: ["anounce", "announ"],
-  desc: "Tag all group member without @ mention",
+  desc: "Markiere alle Gruppenmitglieder ohne @ mention",
   category: "Group",
   usage: "announce <your message>",
   react: "🍁",
@@ -14,10 +14,10 @@ module.exports = {
     { text, prefix, isAdmin, participants, args,buttonId }
   ) => {
 
-      var message = "*『 Attention Here 』*";
+      var message = "*『 Achtung hier 』*";
 
     if(m.quoted){
-        message = "*『 Attention Here 』*";
+        message = "*『 Achtung hie 』*";
       }
     else if (!text && m.quoted) {
       message = `${m.quoted ? m.quoted.msg : ''}`;
@@ -29,11 +29,11 @@ module.exports = {
       message = args.join(' ');
     }
     else if(text ===''){
-      message = "*『 Attention Here 』*";
+      message = "*『 Achtung hie 』*";
     }
    
     else{
-      message = "*『 Attention Here 』*";
+      message = "*『 Achtung hie 』*";
     }
     await Miku.sendMessage(
       m.from,
