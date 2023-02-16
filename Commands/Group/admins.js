@@ -1,7 +1,7 @@
 module.exports = {
     name: "admins",
     alias: ["tagadmins" ,"admin"],
-    desc: "Tag all group Admins.",
+    desc: "Markieren Sie alle Gruppenadministratoren.",
     category: "Group",
     usage: "admins <your message>",
     react: "🍁",
@@ -11,23 +11,23 @@ module.exports = {
       { text, prefix, isAdmin, participants, args ,groupAdmin}
     ) => {
 
-    let message = "       『 *Attention Admins* 』";
+    let message = "       『 *Achtung Admins* 』";
 
     if(m.quoted){
-        message = "       『 *Attention Admins* 』";
+        message = "       『 *Achtung Admins* 』";
       }
     else if (!text && m.quoted) {
       message = `${m.quoted ? m.quoted.msg : ''}`;
     }
     else if(args[0]){
-      message = `       『 *Attention Admins* 』\n\n_🎀 Message:_ *${args.join(' ')}*`;
+      message = `       『 *Achtung Admins* 』\n\n_🎀 Message:_ *${args.join(' ')}*`;
     }
     else if(text ===''){
-      message = "       『 *Attention Admins* 』";
+      message = "       『 *Achtung Admins* 』";
     }
    
     else{
-      message = "       『 *Attention Admins* 』";
+      message = "       『 *Achtung Admins* 』";
     }
     
         Miku.sendMessage(m.from, { text: message, mentions: groupAdmin}, { quoted: m });
