@@ -7,7 +7,7 @@ const fs = require("fs");
 
 module.exports = { 
     name: "rob",  
-    desc: "rob bank amount", 
+    desc: "Bankbetrag rauben", 
     alias: ["rob"],
     category: "Economy",  
     react: "💶", 
@@ -19,7 +19,7 @@ module.exports = {
         if (!text && !m.quoted) {
         return Miku.sendMessage( 
           m.from, 
-          { text: `Please tag a user to *Ban*!` }, 
+          { text: `Bitte markieren Sie einen Benutzer mit *Ban*!` }, 
           { quoted: m } 
         )}
        
@@ -38,21 +38,21 @@ module.exports = {
         const balance2 = await eco.balance(user2, cara);
         const typ = ['ran','rob','caught'];
         const random = typ[Math.floor(Math.random() * typ.length)];
-        if (k > balance1.wallet) return Miku.sendMessage(m.from, { text: '*☹️ You don\'t have enough money to pay fine incase you get caught*' }, { quoted: m }); 
-        if (k > balance2.wallet) return Miku.sendMessage(m.from, { text: '*Sorry, your victim is too poor 🤷🏽‍♂️ let go.*' }, { quoted: m }); 
+        if (k > balance1.wallet) return Miku.sendMessage(m.from, { text: '*☹️ Du hast nicht genug Geld, um eine Strafe zu zahlen, falls du erwischt wirst*' }, { quoted: m }); 
+        if (k > balance2.wallet) return Miku.sendMessage(m.from, { text: '*Tut mir leid, dein Opfer ist zu arm 🤷🏽‍♂️ lass los.*' }, { quoted: m }); 
 
         switch (random) {
             case 'ran':
-                return Miku.sendMessage(m.from, { text: `*Lets leave this poor soul alone.*\n\nHe's toooo poor.` }, { quoted: m });
+                return Miku.sendMessage(m.from, { text: `*Lassen wir diese arme Seele in Ruhe.*\n\nEr ist zu arm.` }, { quoted: m });
             case 'rob':
                 await eco.deduct(user2, cara, amount);
                 await eco.give(user1, cara, amount); 
-                return Miku.sendMessage(m.from, { text: `*🤑 You have stolen ${amount} successfully .🗡️*` }, { quoted: m });
+                return Miku.sendMessage(m.from, { text: `*🤑 Sie haben gestohlen ${amount} erfolgreich .🗡️*` }, { quoted: m });
             case 'caught':
                 await eco.deduct(user1, cara, balance1.wallet); 
-                return Miku.sendMessage(m.from, { text: `*Sorry FBI👮 caught up with you, you lost all 🪙 in wallet.*` }, { quoted: m });
+                return Miku.sendMessage(m.from, { text: `*Tut mir leid, das FBI👮 hat dich eingeholt, du hast alles verloren 🪙 im Portemonnaie.*` }, { quoted: m });
                 default:
-                return Miku.sendMessage(m.from, { text: 'What are you trying to do?' }, { quoted: m });
+                return Miku.sendMessage(m.from, { text: 'Was versuchst du zu machen?' }, { quoted: m });
                 }
                 }
                 }
