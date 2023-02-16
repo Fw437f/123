@@ -28,7 +28,7 @@ if (args[0]) {
         } else {
 
 let textHelpMenu = `Konnichiwa *${pushName}* Senpai,
-I am *${botName}*, a bot developed by *Team Atlas*.
+I am *${botName}*, a bot developed by *✨️MAGIC✨️*.
 🎀 My prefix is: *${prefix}*
 Here's the list of my Commands.\n
              
