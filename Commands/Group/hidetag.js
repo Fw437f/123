@@ -4,7 +4,7 @@ require("../../Core.js");
 module.exports = {
   name: "hidetag",
   alias: ["htag", "ping"],
-  desc: "Tag all group member without @ mention",
+  desc: "Markiere alle Gruppenmitglieder ohne @ mention",
   category: "Group",
   usage: "htag <your message>",
   react: "🍁",
@@ -16,10 +16,10 @@ module.exports = {
     if (!isAdmin)
       return Miku.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
 
-      var message = "*『 Attention Here 』*";
+      var message = "*『 Achtung Hier 』*";
 
     if(m.quoted){
-        message = "*『 Attention Here 』*";
+        message = "*『 Achtung Hier 』*";
       }
     else if (!text && m.quoted) {
       message = `${m.quoted ? m.quoted.msg : ''}`;
@@ -28,11 +28,11 @@ module.exports = {
       message = args.join(' ');
     }
     else if(text ===''){
-      message = "*『 Attention Here 』*";
+      message = "*『 Achtung Hier 』*";
     }
    
     else{
-      message = "*『 Attention Here 』*";
+      message = "*『 Achtung Hier 』*";
     }
     await Miku.sendMessage(
       m.from,
