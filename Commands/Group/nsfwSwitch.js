@@ -8,7 +8,7 @@ const { mk } = require("../../Database/dataschema.js");
 module.exports = {
     name: "nsfw",
     alias: ["nsfwswitch","nsfwmode"],
-    desc: "Enable or disable NSFW commands in a group",
+    desc: "Aktivieren oder deaktivieren Sie NSFW-Befehle in einer Gruppe",
     category: "Group",
     usage: "nsfw [on/off]",
     react: "🎀",
@@ -22,7 +22,7 @@ module.exports = {
         return Miku.sendMessage(
           m.from,
           {
-            text: `*${pushName}* must be *Admin* to turn ON/OFF NSFW !`,
+            text: `*${pushName}* muss *Admin* sein, um NSFW ON/OFF zuschalten !`,
           },
           { quoted: m }
         );
@@ -41,27 +41,27 @@ module.exports = {
           Miku.sendMessage(
             m.from,
             {
-              text: `*NSFW* has been *Activated* in this group!`,
+              text: `*NSFW* wurde in dieser Gruppe *aktiviert*!`,
               contextInfo: { mentionedJid: mems },
             },
             { quoted: m }
           );
           return Miku.sendMessage(
             m.from,
-            { text: `*NSFW* has been *Activated* in this group!` },
+            { text: `*NSFW* wurde in dieser Gruppe *aktiviert*!` },
             { quoted: m }
           );
         } else {
           if (checkdata.switchNSFW == "true")
             return Miku.sendMessage(
                 m.from,
-                { text: `*NSFW* is already *Activated* in this group !` },
+                { text: `*NSFW* ist in dieser Gruppe bereits *aktiviert* !` },
                 { quoted: m }
               );
           await mk.updateOne({ id: m.from }, { switchNSFW: "true" });
           return Miku.sendMessage(
             m.from,
-            { text: `*NSFW* has been *Activated* in this group!` },
+            { text: `*NSFW* wurde in dieser Gruppe *aktiviert*!` },
             { quoted: m }
           );
         }
@@ -70,19 +70,19 @@ module.exports = {
           await new mk({ id: m.from, switchNSFW: "false" }).save();
           return Miku.sendMessage(
             m.from,
-            { text: `*NSFW* has been *De-Activated* in this group !` },
+            { text: `*NSFW* wurde in dieser Gruppe *deaktiviert* !` },
             { quoted: m }
           );
         } else {
           if (checkdata.switchNSFW == "false") return Miku.sendMessage(
             m.from,
-            { text: `*NSFW* is already *De-Activated* in this group !` },
+            { text: `*NSFW* ist in dieser Gruppe bereits *Deaktiviert* !` },
             { quoted: m }
           );
           await mk.updateOne({ id: m.from }, { switchNSFW: "false" });
           return Miku.sendMessage(
             m.from,
-            { text: `*NSFW* has been *De-Activated* in this group !` },
+            { text: `*NSFW* wurde in dieser Gruppe *deaktiviert* !` },
             { quoted: m }
           );
         }
@@ -101,7 +101,7 @@ module.exports = {
         ];
         let bmffg = {
           image: {url : botImage5} ,
-          caption: `\nPlease click the button below\n*On / Off*\n`,
+          caption: `\nBitte klicken Sie auf die Schaltfläche unten\n*On / Off*\n`,
           footer: `*${botName}*`,
           buttons: buttonsntilink,
           headerType: 4,
