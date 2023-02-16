@@ -8,7 +8,7 @@ const fs = require("fs");
 module.exports = { 
 
     name: "transfer",  
-    desc: "transfer gold.", 
+    desc: "Gold übertragen.", 
     alias: ["give"],
     category: "Economy",  
     react: "💴", 
@@ -18,11 +18,11 @@ module.exports = {
       { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,eco,ty} 
     ) => {
         let value = text.trim().split(" ");
-    if (value[0] === "") return m.reply(`Use ${prefix}transfer 100 @user`);
+    if (value[0] === "") return m.reply(`Gebe ${prefix}transfer 100 @user`);
     if (!text && !m.quoted) {
       return Miku.sendMessage(
         m.from,
-        { text: `Please tag any user ${pushName} senpai 🤦‍♂️ !` },
+        { text: `Bitte markieren Sie ein Benutzer ${pushName} senpai 🤦‍♂️ !` },
         { quoted: m }
       );
     } else if (m.quoted) {
@@ -40,11 +40,11 @@ module.exports = {
         const word = value[0];
 		const code = value[1];
         let d = parseInt(word)
-		if (!d)return m.reply('check your text plz u r using the command in a wrong way👀');
+		if (!d)return m.reply('Überprüfen Sie Ihren Text, wenn Sie den Befehl falsch verwenden👀');
         const balance = await eco.balance(user1, cara);
         let a = (balance.wallet) < parseInt(word)
         //Returns wallet, bank, and bankCapacity. Also creates a USer if it doesn't exist.
-        if(a == true) return m.reply("you dont have sufficient money to transfer👎");
+        if(a == true) return m.reply("Sie haben nicht genug Geld, um zu überweisen👎");
 
         const deduct = await eco.deduct(user1, cara, value[0]);
         const give = await eco.give(user2, cara, value[0]);
@@ -63,7 +63,7 @@ module.exports = {
           ];
           let buttonMessage = {
             image: fs.readFileSync("./Assets/Img/card.png"), 
-            caption: `*📠 Transaction successful of ${word} 💷*`,
+            caption: `*📠 Transaktion erfolgreich von ${word} 💷*`,
             footer: `*${botName}*`,
             buttons: buttons,
             type: 4
