@@ -8,7 +8,7 @@ const { mk } = require("../../Database/dataschema.js");
 module.exports = {
     name: "cmd",
     alias: ["bot","botswitch"],
-    desc: "Enable or disable bot in a group",
+    desc: "Bot in einer Gruppe aktivieren oder deaktivieren",
     category: "Group",
     usage: "cmd [on/off]",
     react: "🎀",
@@ -22,7 +22,7 @@ module.exports = {
         return Miku.sendMessage(
           m.from,
           {
-            text: `*${pushName}* must be *Admin* to turn ON/OFF bot !`,
+            text: `*${pushName}* muss *Admin* sein, um den Bot ON/OFF zuschalten !`,
           },
           { quoted: m }
         );
@@ -41,27 +41,27 @@ module.exports = {
           Miku.sendMessage(
             m.from,
             {
-              text: `*${botName}* has been Re-Activated in this group!`,
+              text: `*${botName}* wurde in dieser Gruppe Aktiviert!`,
               contextInfo: { mentionedJid: mems },
             },
             { quoted: m }
           );
           return Miku.sendMessage(
             m.from,
-            { text: `*${botName}* has been Re-Activated in this group!` },
+            { text: `*${botName}* wurde in dieser Gruppe Aktiviert!` },
             { quoted: m }
           );
         } else {
           if (checkdata.botSwitch == "true")
             return Miku.sendMessage(
                 m.from,
-                { text: `*${botName}* is already Activated in this group !` },
+                { text: `*${botName}* ist in dieser Gruppe bereits aktiviert !` },
                 { quoted: m }
               );
           await mk.updateOne({ id: m.from }, { botSwitch: "true" });
           return Miku.sendMessage(
             m.from,
-            { text: `*${botName}* has been Activated in this group!` },
+            { text: `*${botName}* wurde in dieser Gruppe aktiviert!` },
             { quoted: m }
           );
         }
@@ -70,19 +70,19 @@ module.exports = {
           await new mk({ id: m.from, botSwitch: "false" }).save();
           return Miku.sendMessage(
             m.from,
-            { text: `*${botName}* has been De-Activated in this group !\n\nNow only *Admins* can use bot` },
+            { text: `*${botName}* wurde in dieser Gruppe deaktiviert!\n\nJetzt können nur *Admins* den Bot verwenden` },
             { quoted: m }
           );
         } else {
           if (checkdata.botSwitch == "false") return Miku.sendMessage(
             m.from,
-            { text: `*${botName}* is already De-Activated in this group !` },
+            { text: `*${botName}* ist in dieser Gruppe bereits deaktiviert !` },
             { quoted: m }
           );
           await mk.updateOne({ id: m.from }, { botSwitch: "false" });
           return Miku.sendMessage(
             m.from,
-            { text: `${botName} has been De-Activated in this group !\n\nNow only *Admins* can use bot` },
+            { text: `${botName} wurde in dieser Gruppe deaktiviert !\n\nJetzt können nur *Admins* den Bot verwenden` },
             { quoted: m }
           );
         }
@@ -101,7 +101,7 @@ module.exports = {
         ];
         let bmffg = {
           image: {url : botImage2} ,
-          caption: `\nPlease click the button below\n*On / Off*\n`,
+          caption: `\nBitte klicken Sie auf die Schaltfläche unten\n*On / Off*\n`,
           footer: `*${botName}*`,
           buttons: buttonsntilink,
           headerType: 4,
