@@ -1,7 +1,7 @@
 module.exports = {
   name: "promote",
   alias: ["prom"],
-  desc: "Promote a member",
+  desc: "Fördern Sie ein Mitglied",
   category: "Group",
   usage: "promote @user",
   react: "🍁",
@@ -21,7 +21,7 @@ module.exports = {
     if (!text && !m.quoted) {
       return Miku.sendMessage(
         m.from,
-        { text: `Please tag a user to *Promote*!` },
+        { text: `Bitte markieren Sie einen Benutzer zum *Promote*!` },
         { quoted: m }
       );
     } else if (m.quoted) {
@@ -36,7 +36,7 @@ module.exports = {
         m.from,
         { text: `@${
           mentionedUser.split("@")[0]
-        } Senpai is already an *Admin* !`,mentions: [mentionedUser], },
+        } Senpai ist bereits *Admin* !`,mentions: [mentionedUser], },
         { quoted: m }
       );
     }
@@ -49,7 +49,7 @@ module.exports = {
             {
               text: `Congratulations @${
                 mentionedUser.split("@")[0]
-              } Senpai 🥳, you have been *Promoted* Successfully !`,
+              } Senpai  🥳, du wurdest erfolgreich *befördert* !`,
               mentions: [mentionedUser],
             },
             { quoted: m }
