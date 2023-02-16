@@ -1,18 +1,18 @@
 module.exports = {
   name: "stalk",
   alias: ["nowa", "stalkwhatsapp", "stalknumber"],
-  desc: "Search for a whatsapp number in a given range",
+  desc: "Suchen Sie nach einer WhatsApp-Nummer in einem bestimmten Bereich",
   usage: "stalk 9181011564xxx",
   react: "🍁",
   category: "Core",
   start: async (Miku, m, { pushName, args, prefix }) => {
     if (!args[0])
-      return m.reply(`Use command like: ${prefix}stalk 9181011564xxx`);
+      return m.reply(`Verwenden Sie den Befehl so: ${prefix}stalk 9181011564xxx`);
     var inputnumber = args[0];
-    if (!inputnumber.includes("x")) return m.reply("You didnot added x");
-    if (inputnumber.includes("xxxx")) return m.reply("Maximum 3 'x' are allowed ! To avoid ban !");
+    if (!inputnumber.includes("x")) return m.reply("Sie haben x nicht hinzugefügt");
+    if (inputnumber.includes("xxxx")) return m.reply("Maximal 3 'x' sind erlaubt ! Um ein Ban zu vermeiden !");
     m.reply(
-      `Searching for WhatsApp accounts in given range...\n\nPlease wait for a minute...`
+      `Suche nach WhatsApp-Konten im angegebenen Bereich...\n\nBitte warten Sie eine Minute...`
     );
     function countInstances(string, word) {
         return string.split(word).length - 1;
@@ -30,9 +30,9 @@ module.exports = {
         }else if (random_length == 4) {
           randomxx = 10000
         }
-    var nomerny = `        *『 List of Whatsapp Numbers 』*\n\n`;
-    var nobio = `\n🎀 *Bio:* Hey there! I am using WhatsApp.\n\n`;
-    var nowhatsapp = `\n🎀 *Numbers with no WhatsApp account within the range you provided*\n\n`;
+    var nomerny = `        *『 Liste der WhatsApp-Nummern 』*\n\n`;
+    var nobio = `\n🎀 *Bio:* Sie da! Ich benutze WhatsApp.\n\n`;
+    var nowhatsapp = `\n🎀 *Nummern ohne WhatsApp-Konto innerhalb des von Ihnen angegebenen Bereichs*\n\n`;
 
     for (let i = 0; i < randomxx; i++) {
         var nu = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
