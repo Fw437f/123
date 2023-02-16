@@ -8,7 +8,7 @@ const { economy } = require("discord-mongoose-economy/models/economy.js");
  
  module.exports = { 
     name: "leaderboard", 
-    desc: "To view the leaderboard of current users", 
+    desc: "Um die Rangliste der aktuellen Benutzer anzuzeigen", 
     alias: ["lb"],
     category: "Economy", 
     usage: "leaderboard", 
@@ -17,9 +17,9 @@ const { economy } = require("discord-mongoose-economy/models/economy.js");
         try { 
             let h = await eco.lb('cara', 10);
             if(h.length === 0) {
-                return Miku.sendMessage(m.from, { text: 'No users found on leaderboard.' }, { quoted: m });
+                return Miku.sendMessage(m.from, { text: 'Keine Benutzer auf der Bestenliste gefunden.' }, { quoted: m });
             }
-            let str = `*Top ${h.length} users with more money in wallet.*\n`;
+            let str = `*Top ${h.length} Benutzer mit mehr Geld in der Brieftasche.*\n`;
             let arr = [];
             for(let i = 0; i < h.length; i++){
                 let username = await mku.findOne({ id: h[i].userID, name: m.pushName });
@@ -29,13 +29,13 @@ const { economy } = require("discord-mongoose-economy/models/economy.js");
                 } else {
                     tname = Miku.getName(h[i].userID);
                 }
-                str += `*${i+1}*\n╭─────────────◆\n│ *🎀 Name:-* _${tname}_\n│ *⚜️ User:-* _@${h[i].userID.split('@')[0]}_\n│ *💳 Wallet:-* _${h[i].wallet}_\n│ *📄 Bank Amount:-* _${h[i].bank}_\n│ *📊 Bank Capacity:-* _${h[i].bankCapacity}_\n╰─────────────◆\n\n`;  	 
+                str += `*${i+1}*\n╭─────────────◆\n│ *🎀 Name:-* _${tname}_\n│ *⚜️ Benutzer:-* _@${h[i].userID.split('@')[0]}_\n│ *💳 Geld:-* _${h[i].wallet}_\n│ *📄 Bank Menge:-* _${h[i].bank}_\n│ *📊 Bank Kapazität:-* _${h[i].bankCapacity}_\n╰─────────────◆\n\n`;  	 
                 arr.push(h[i].userID);
             }
             Miku.sendMessage(m.from, { text: str, mentions: arr }, { quoted: m });
         } catch (err) {
             console.log(err);
-            return Miku.sendMessage(m.from, { text: `An internal error occurred while fetching the leaderboard.` }, { quoted: m });
+            return Miku.sendMessage(m.from, { text: `Beim Abrufen der Bestenliste ist ein interner Fehler aufgetreten.` }, { quoted: m });
         }
     }
 }
