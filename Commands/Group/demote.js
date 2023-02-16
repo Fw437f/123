@@ -4,7 +4,7 @@ require("../../Core.js");
 module.exports = {
   name: "demote",
   alias: ["dem"],
-  desc: "Demote a member",
+  desc: "Entfernen Sie ein Mitglied Admin status",
   category: "Group",
   usage: "demote @user",
   react: "🍁",
@@ -24,7 +24,7 @@ module.exports = {
     if (!text && !m.quoted) {
       return Miku.sendMessage(
         m.from,
-        { text: `Please tag a user to *Demote*!` },
+        { text: `Bitte markieren Sie einen Benutzer mit *Demote*!` },
         { quoted: m }
       );
     } else if (m.quoted) {
@@ -39,7 +39,7 @@ module.exports = {
         m.from,
         { text: `@${
           mentionedUser.split("@")[0]
-        } Senpai is not an *Admin* !`,mentions: [mentionedUser], },
+        }  Senpai ist kein *Admin*!`,mentions: [mentionedUser], },
         { quoted: m }
       );
     }
@@ -50,9 +50,9 @@ module.exports = {
           Miku.sendMessage(
             m.from,
             {
-              text: `Sorry @${
+              text: `Verzeihung @${
                 mentionedUser.split("@")[0]
-              } Senpai, you have been *Demoted* by an *Admin* !`,
+              } Senpai, du wurdest von einem *Admin* *Zu Mitglied* !`,
               mentions: [mentionedUser],
             },
             { quoted: m }
