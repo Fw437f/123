@@ -1,7 +1,7 @@
 module.exports = {
     name: "truth",
     alias: ["t"],
-    desc: "truth",
+    desc: "Wahrheit",
     cool:3,
     react: "🙄",
     category: "Fun",
