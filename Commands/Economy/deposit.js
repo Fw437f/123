@@ -8,7 +8,7 @@ const fs = require("fs");
 module.exports = { 
 
     name: "deposit",  
-    desc: "deposit gold.", 
+    desc: "Gold hinterlegen.", 
     alias: ["deposit"],
     category: "Economy",  
     react: "💵", 
@@ -20,7 +20,7 @@ module.exports = {
         if(!text)  {
             return Miku.sendMessage( 
                 m.from, 
-                { text: `Baka!! Provide the 💰amount you want to deposit!` }, 
+                { text: `Baka!! Geben Sie den 💰Betrag an, den Sie einzahlen möchten!` }, 
                 { quoted: m } 
             );
         }
@@ -31,7 +31,7 @@ module.exports = {
 		const cara = 'cara'
     const deposit = await eco.deposit(m.sender, "cara", texts);
     const balance = await eco.balance(m.sender, "cara")
-        if(deposit.noten) return m.reply('You can\'t deposit what you don\'t have.');
+        if(deposit.noten) return m.reply('Sie können nicht einzahlen, was Sie nichts haben.');
         let buttons = [
             {
               buttonId: `${prefix}wallet`,
@@ -47,7 +47,7 @@ module.exports = {
           ];
           let buttonMessage = {
             image: fs.readFileSync("./Assets/Img/card.png"), 
-            caption: `\n⛩️ Sender: ${m.pushName}\n\n🍀Successfully Deposited 💴 ${deposit.amount} to your bank.\n`,
+            caption: `\n⛩️ Sender: ${m.pushName}\n\n🍀Erfolgreich eingezahlt 💴 ${deposit.amount} zu Ihrer Bank.\n`,
             footer: `*${botName}*`,
             buttons: buttons,
             type: 4
