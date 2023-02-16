@@ -4,7 +4,7 @@ require("../../Core.js");
 module.exports = {
   name: "grouplink",
   alias: ["gclink"],
-  desc: "To get concurrent group link.",
+  desc: "Um den Gruppenlink zu erhalten.",
   category: "Group",
   usage: "gclink",
   react: "🍁",
@@ -30,7 +30,7 @@ module.exports = {
         m.from,
         {
           image: { url: ppgc, mimetype: "image/jpeg" },
-          caption: `\n_🎀 Group Name:_ *${metadata.subject}*\n\n_🔷 Group Link:_\n${linkcode}\n`,
+          caption: `\n_🎀 Gruppen Name:_ *${metadata.subject}*\n\n_🔷 Gruppen Link:_\n${linkcode}\n`,
         },
         { quoted: m }
       );
