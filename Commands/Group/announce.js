@@ -14,10 +14,10 @@ module.exports = {
     { text, prefix, isAdmin, participants, args,buttonId }
   ) => {
 
-      var message = "*『 Achtung hier 』*";
+      var message = "*『 Achtung Hier 』*";
 
     if(m.quoted){
-        message = "*『 Achtung hie 』*";
+        message = "*『 Achtung Hier 』*";
       }
     else if (!text && m.quoted) {
       message = `${m.quoted ? m.quoted.msg : ''}`;
@@ -29,11 +29,11 @@ module.exports = {
       message = args.join(' ');
     }
     else if(text ===''){
-      message = "*『 Achtung hie 』*";
+      message = "*『 Achtung Hier 』*";
     }
    
     else{
-      message = "*『 Achtung hie 』*";
+      message = "*『 Achtung Hier 』*";
     }
     await Miku.sendMessage(
       m.from,
