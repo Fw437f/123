@@ -28,8 +28,7 @@ if (args[0]) {
         } else {
 
 let textHelpMenu = `Konnichiwa *${pushName}* Senpai,
-
-I am *${botName}*, a bot developed by *✨️MAGIC✨️*.
+I am *${botName}*, a bot developed by *Team Atlas*.
 🎀 My prefix is: *${prefix}*
 Here's the list of my Commands.\n
              
@@ -244,16 +243,7 @@ textHelpMenu += `╭────ꕥ NSFW ꕥ────╮
 textHelpMenu +=`*🔰  ${botName}  🔰*
  _Powered By:_ *✨️MAGIC✨️*
 🎀 To use any of these commands type 
-" *${prefix}Command name* ".
-
-「 System Info 」
-    
-    Speed : ${latensie.toFixed(4)} miliseconds
-    Up Time : ${runtime(process.uptime())}
-    Bot Name : ${global.BotName}
-    Owner Name : ${global.OwnerName}
-    𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : Amazon AWS
-    𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}\n`
+" *${prefix}Command name* ".\n`
 
 let buttons = [
     {
@@ -273,3 +263,4 @@ let buttons = [
 }
   }
 }
+Footer
