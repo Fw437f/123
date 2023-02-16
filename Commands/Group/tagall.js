@@ -4,7 +4,7 @@ require("../../Core.js");
 module.exports = {
   name: "tagall",
   alias: ["tag", "all"],
-  desc: "Tag all group member",
+  desc: "Markiere alle Gruppenmitglieder",
   category: "Group",
   usage: "tagall",
   react: "🍁",
@@ -16,9 +16,9 @@ module.exports = {
     if (!isAdmin)
       return Miku.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
 
-    let message = args ? args.join(' ') :  m.quoted ? m.quoted.msg : 'No Message';
+    let message = args ? args.join(' ') :  m.quoted ? m.quoted.msg : 'Kein Nachricht';
 
-    let mess = `               *『 Attention Here 』*
+    let mess = `               *『 Achtung Hier 』*
     
 *Tagged by:* @${m.sender.split("@")[0]}
     
@@ -27,7 +27,7 @@ module.exports = {
     for (let mem of participants) {
       mess += `♢ @${mem.id.split("@")[0]}\n`;
     }
-    mess += `\n\n                    *Thank You*\n`;
+    mess += `\n\n                    *Danke*\n`;
 
     await Miku.sendMessage(m.from, { text: mess,mentions: participants.map(a => a.id) }, { quoted: m });
   },
