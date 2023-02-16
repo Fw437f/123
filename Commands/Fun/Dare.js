@@ -1,7 +1,7 @@
 module.exports = {
     name: "dare",
     alias: ["givedare","d"],
-    desc: "trau dich",
+    desc: "Pflicht",
     cool:3,
     react: "🙄",
     category: "Fun",
