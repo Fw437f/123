@@ -30,9 +30,7 @@ if (args[0]) {
 let textHelpMenu = `Konnichiwa *${pushName}* Senpai,
 
 I am *${botName}*, a bot developed by *✨️MAGIC✨️*.
-
 🎀 My prefix is: *${prefix}*
-
 Here's the list of my Commands.\n
              
 ╭────ꕥ Core ꕥ────╮
@@ -74,15 +72,7 @@ Here's the list of my Commands.\n
 ├・💫 ɪɢᴅʟ, ɪɢᴅʟ2, 
 ├・💫 ᴘʟᴀʏʟɪꜱᴛ, ᴘʟᴀʏ, 
 ├・💫 ʏᴛᴀᴜᴅɪᴏ, ʏᴛᴠɪᴅᴇᴏ, 
-├・💫 ʏᴛꜱ「 System Info 」
-    
-    Speed : ${latensie.toFixed(4)} miliseconds
-    Up Time : ${runtime(process.uptime())}
-    Bot Name : ${global.BotName}
-    Owner Name : ${global.OwnerName}
-    𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : Amazon AWS
-    𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
-    
+├・💫 ʏᴛꜱ
 ├
 ╰──────────────────╯
 ╭────ꕥ Search ꕥ────╮
@@ -263,8 +253,7 @@ textHelpMenu +=`*🔰  ${botName}  🔰*
     Bot Name : ${global.BotName}
     Owner Name : ${global.OwnerName}
     𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : Amazon AWS
-    𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}
-    \n`
+    𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.users).length}\n`
 
 let buttons = [
     {
