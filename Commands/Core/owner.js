@@ -48,7 +48,7 @@ module.exports = {
             } 
             
             if(modlistString != "" || ownerList.length != 0){
-               textM += `\n\n📛 *Don't Spam them to avoid Blocking !*\n\n🎀 For any help, type *${prefix}support* and ask in group.\n\n*💫 Thanks for using ${botName}. 💫*\n`
+               textM += `\n\n📛 *Don't Spam them to avoid Blocking !*\n\n🎀 For any help, type *${prefix}owner* and ask him.\n\n*💫 Thanks for using ${botName}. 💫*\n`
             }
             
             return Miku.sendMessage( 
