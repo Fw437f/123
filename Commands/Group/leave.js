@@ -4,7 +4,7 @@ const { mku } = require("../../Database/dataschema.js");
 module.exports = {
     name: "leave",
     alias: ["leavegc"],
-    desc: "ask bot to leave a group",
+    desc: "Bitten Sie den Bot, eine Gruppe zu verlassen",
     category: "Group",
     usage: "leave",
     react: "👋",
@@ -26,12 +26,12 @@ module.exports = {
       });
 
       
-      if (modStatus=="false"&&!isCreator && !isAdmin)  return Miku.sendMessage(m.from, { text: 'Sorry, only *GroupAdmins* and *Mods* can use this command !' }, { quoted: m });
+      if (modStatus=="false"&&!isCreator && !isAdmin)  return Miku.sendMessage(m.from, { text: 'Entschuldigung, nur *GroupAdmins* und *Mods* können diesen Befehl verwenden !' }, { quoted: m });
       let img ="https://wallpapercave.com/wp/wp9667218.png";
 
-      await Miku.sendMessage(m.from, { image:{url:"https://wallpapercave.com/wp/wp9667218.png"  }, caption: `I'm Leaving this group on request... \n\nTake care everyone :)`,mentions: participants.map((a) => a.id) , quoted: m }).then(async () => {
+      await Miku.sendMessage(m.from, { image:{url:"https://wallpapercave.com/wp/wp9667218.png"  }, caption: `Ich verlasse diese Gruppe auf Anfrage... \n\nMacht's gut alle zusammen :)`,mentions: participants.map((a) => a.id) , quoted: m }).then(async () => {
          Miku.groupLeave(m.from).catch(e => {
-          Miku.sendMessage(m.from, { text: `An error Occurd !` }, { quoted: m });
+          Miku.sendMessage(m.from, { text: `Ein Fehler ist aufgetreten !` }, { quoted: m });
         });
       });
 
