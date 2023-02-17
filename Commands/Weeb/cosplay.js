@@ -3,7 +3,7 @@ const { getBuffer } = require("../../lib/myfunc");
 module.exports = {
   name: "cosplay",
   alias: ["crosplay", "cos", "cplay"],
-  desc: "To get a random Cosplay image",
+  desc: "Um ein zufälliges Cosplay-Bild zu erhalten",
   category: "Weeb",
   usage: `cosplay`,
   react: "🍁",
@@ -12,19 +12,19 @@ module.exports = {
     var cosplayButton = [
       {
         buttonId: `${prefix}cosplay`,
-        buttonText: { displayText: `>>` },
+        buttonText: { displayText: `weiter...` },
         type: 1,
       },
     ];
     let bmffg = {
       image: cosplayImage,
-      caption: `Cosplay API by *Team Atlas*\n\n*API link:* https://shubhapratimbiswas.tech\n`,
+      caption: `Wer bin ich *${pushName}* senpai!!!\n`,
       footer: `*${botName}*`,
       buttons: cosplayButton,
       headerType: 4,
     };
     await Miku.sendMessage(m.from, bmffg, { quoted: m }).catch((err) => {
-      return "Error!";
+      return "Fehler!";
     });
   },
 };
