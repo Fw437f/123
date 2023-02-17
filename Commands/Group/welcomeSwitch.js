@@ -55,13 +55,13 @@ module.exports = {
           if (checkdata.switchWelcome == "true")
             return Miku.sendMessage(
                 m.from,
-                { text: `*Welcome/Goodbye* messages is already *Activated* in this group!` },
+                { text: `*Willkommens-/Auf Wiedersehens*-Nachrichten sind in dieser Gruppe bereits *aktiviert*!` },
                 { quoted: m }
               );
           await mk.updateOne({ id: m.from }, { switchWelcome: "true" });
           return Miku.sendMessage(
             m.from,
-            { text: `*Welcome/Goodbye* messages has been *Activated* in this group!` },
+            { text: `*Willkommens-/Auf Wiedersehens*-Nachrichten wurden in dieser Gruppe *aktiviert*!` },
             { quoted: m }
           );
         }
@@ -70,19 +70,19 @@ module.exports = {
           await new mk({ id: m.from, switchWelcome: "false" }).save();
           return Miku.sendMessage(
             m.from,
-            { text: `*Welcome/Goodbye* messages has been *De-Activated* in this group!` },
+            { text: `*Willkommens-/Auf Wiedersehens*-Nachrichten wurden in dieser Gruppe *deaktiviert*!` },
             { quoted: m }
           );
         } else {
           if (checkdata.switchWelcome == "false") return Miku.sendMessage(
             m.from,
-            { text: `*Welcome/Goodbye* is not *Activated* in this group!` },
+            { text: `*Welcome/Goodbye* ist in dieser Gruppe nicht *aktiviert*!` },
             { quoted: m }
           );
           await mk.updateOne({ id: m.from }, { switchWelcome: "false" });
           return Miku.sendMessage(
             m.from,
-            { text: `*Welcome/Goodbye* messages has been *De-Activated* in this group!` },
+            { text: `*Willkommens-/Auf Wiedersehens*-Nachrichten wurden in dieser Gruppe *deaktiviert*!` },
             { quoted: m }
           );
         }
@@ -101,7 +101,7 @@ module.exports = {
         ];
         let bmffg = {
           image: {url : botImage2} ,
-          caption: `\nPlease click the button below\n*On / Off*\n`,
+          caption: `\nBitte klicken Sie auf die Schaltfläche unten\n*On/Off*\n`,
           footer: `*${botName}*`,
           buttons: buttonsntilink,
           headerType: 4,
