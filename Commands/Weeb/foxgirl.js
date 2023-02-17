@@ -3,7 +3,7 @@ const axios = require("axios");
 module.exports = {
   name: "foxgirl",
   alias: ["foxwaifu","awoo"],
-  desc: "To get a random Fox girl image",
+  desc: "Um ein zufälliges Fox-Girl-Bild zu erhalten",
   category: "Weeb",
   usage: `foxgirl`,
   react: "🍁",
@@ -12,7 +12,7 @@ module.exports = {
     var fgbutton = [
       {
         buttonId: `${prefix}awoo`,
-        buttonText: { displayText: `>>` },
+        buttonText: { displayText: `weiter...` },
         type: 1,
       },
     ];
@@ -24,7 +24,7 @@ module.exports = {
       headerType: 4,
     };
     await Miku.sendMessage(m.from, bmffg, { quoted: m }).catch((err) => {
-      return "Error!";
+      return "Fehler!";
     });
   },
 };
