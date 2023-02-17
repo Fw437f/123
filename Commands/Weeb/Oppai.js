@@ -3,7 +3,7 @@ const axios = require('axios')
 module.exports = {
     name: "oppai",
     alias: ["boobs","oppais"],
-    desc: "Get anime bog boobs girls picture.",
+    desc: "Holen Sie sich Anime Moor Boobs Mädchenbild.",
     react: "🥵",
     category: "Weeb",
     start: async(Miku, m,{pushName,prefix}) => {
@@ -12,13 +12,13 @@ module.exports = {
 let Button = [
       {
         buttonId: `${prefix}oppai`,
-        buttonText: { displayText: `>>` },
+        buttonText: { displayText: `Weiter...` },
         type: 1,
       },
     ];
     let oppais = {
       image: {url:oppai.data.url},
-      caption: `Do you love Oppai too ${pushName} Senpai... ?`,
+      caption: `Liebst du Oppai auch ${pushName} Senpai... ?`,
       footer: `*${botName}*`,
       buttons: Button,
       headerType: 4,
