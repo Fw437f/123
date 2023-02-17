@@ -3,7 +3,7 @@ const { getBuffer } = require("../../lib/myfunc");
 module.exports = {
   name: "cosplayvideo",
   alias: ["cv","cosplayamv","cosplayvid" ],
-  desc: "To get a random cosplayvideo",
+  desc: "Um ein zufälliges Cosplayvideo zu erhalten",
   category: "Weeb",
   usage: `cosplayamv`,
   react: "😉",
@@ -12,14 +12,14 @@ module.exports = {
     var Button = [
       {
         buttonId: `${prefix}cv`,
-        buttonText: { displayText: `>>` },
+        buttonText: { displayText: `Weiter...` },
         type: 1,
       },
     ];
     let bmffg = {
       video: VID,
       gifPlayback:true,
-      caption: `Cosplayvideo API by *Team Atlas*\n\n*API link:* https://shubhapratimbiswas.tech\n`,
+      caption: `Wer bin ich *${pushName}* senpai!!!\n`,
       footer: `*${botName}*`,
       buttons: Button,
       headerType: 4,
