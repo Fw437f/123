@@ -48,7 +48,7 @@ global.prefa = process.env.PREFIX || "-";
 global.tenorApiKey =
   process.env.TENOR_API_KEY || "AIzaSyCyouca1_KKy4W_MG1xsPzuku5oa8W358c";
 global.packname = process.env.PACKNAME || `✨️MAGIC✨️`;
-global.author = process.env.AUTHOR || "by: Für ✨️MAGIC✨️";
+global.author = process.env.AUTHOR || "Für:✨️MAGIC✨️";
 global.port = process.env.PORT || "8000";
 
 
@@ -56,19 +56,19 @@ global.port = process.env.PORT || "8000";
 // ---------------------Do Not Modify this part------------------- //
 
 global.mess = {
-  jobdone: "Job done...",
-  useradmin: "Sorry, only *Group Admins* can use this command *Baka*!",
+  jobdone: "Job erledigt...",
+  useradmin: "Entschuldigung, nur *Gruppenadministratoren* können diesen Befehl verwenden *Baka*!",
   botadmin:
-    "Sorry, i cant execute this command without being an *Admin* of this group.",
-  botowner: "Only my *Owner* can use this command, Baka!",
-  grouponly: "This command is only made for *Groups*, Baka!",
-  privateonly: "This command is only made for *Private Chat*, Baka!",
-  botonly: "Only the *Bot itself* can use this command!",
-  waiting: "Chotto Matte...",
-  nolink: "Please provide me *link*, Baka!",
-  error: "An error occurd!",
-  banned: `You are *Banned* fron using commands!  \n\nType *${prefa}owner* or *${prefa}support* to submit a request to unban yourself !`,
-  bangc: "This Group is *Banned* from using Commands!",
-  nonsfw: "Dont be a pervert Baka! This is not a NSFW enabled group!",
+    "Tut mir leid, ich kann diesen Befehl nicht ausführen, ohne ein *Admin* dieser Gruppe zu sein.",
+  botowner: "Nur mein *Eigentümer* kann diesen Befehl verwenden, Baka!",
+  grouponly: "Dieser Befehl gilt nur für *Gruppen*, Baka!",
+  privateonly: "Dieser Befehl ist nur für *Private Chat*,gedacht Baka!",
+  botonly: "Nur der *Bot selbst* kann diesen Befehl verwenden *Meister*!",
+  waiting: "warten Sie eine Minute...",
+  nolink: "Bitte gib mir *link*, Baka!",
+  error: "Ein Fehler ist aufgetreten!",
+  banned: `Sie sind für die Verwendung von Befehlen *gesperrt*!  \n\nGib *${prefa}owner* um einen Antrag auf Entbannung einzureichen !`,
+  bangc: "Diese Gruppe ist von der Verwendung von Befehlen *gesperrt*!",
+  nonsfw: "Sei kein perverser Baka! Dies ist keine NSFW-aktivierte Gruppe!",
 };
 
