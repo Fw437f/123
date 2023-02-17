@@ -12,19 +12,19 @@ module.exports = {
     var cosplayButton = [
       {
         buttonId: `${prefix}cosplay`,
-        buttonText: { displayText: `weiter...` },
+        buttonText: { displayText: `Weiter...` },
         type: 1,
       },
     ];
     let bmffg = {
       image: cosplayImage,
-      caption: `Wer bin ich *${pushName}* senpai!!!\n`,
+      caption: `Wer bin ich!!!\n`,
       footer: `*${botName}*`,
       buttons: cosplayButton,
       headerType: 4,
     };
     await Miku.sendMessage(m.from, bmffg, { quoted: m }).catch((err) => {
-      return "Fehler!";
+      return "fehler!";
     });
   },
 };
