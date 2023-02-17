@@ -25,7 +25,7 @@ module.exports = {
       headerType: 4,
     };
     await Miku.sendMessage(m.from, bmffg, { quoted: m }).catch((err) => {
-      return "Error!";
+      return "Fehler!";
     });
   },
 };
