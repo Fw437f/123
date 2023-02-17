@@ -7,14 +7,14 @@ module.exports = {
     name: "wallpaper",
     alias: ["animewallpaper"],
     usage: `${prefa}wallpaper <query>`,
-    desc: "Gives you the wallpaper...",
+    desc: "Gibt Ihnen das Hintergrundbild...",
     category: "Weeb",
     react: "✅",
   
     start: async (Miku, m, { command, prefix, text, args }) => {
         const im = args.join(" ").split("#");
         const noi = Number(im[1]) || 1;
-        if (!im[0]) return m.reply("No wallpaper found...");
+        if (!im[0]) return m.reply("Keine Wallpaper gefunden...");
         let wallpapers;
         try {
           wallpapers = await wall.getAnimeWall5(im[0]);
@@ -22,10 +22,10 @@ module.exports = {
           try {
             wallpapers = await wall.getAnimeWall3(im[0]);
           } catch (error) {
-            return m.reply("No wallpaper found...");
+            return m.reply("Keine Wallpaper gefunden...");
           }
         }
-        if (!wallpapers) return m.reply("No wallpaper found...");
+        if (!wallpapers) return m.reply("Keine Wallpaper gefunden...");
         for (let i = 0; i < Math.min(wallpapers.length, noi); i++) {
           const randomIndex = Math.floor(Math.random() * wallpapers.length);
       
@@ -33,7 +33,7 @@ module.exports = {
             image: {
               url: wallpapers[randomIndex].image,
             },
-            caption: `*Search term:* ${im[0]}`,
+            caption: `*Suchbegriff:* ${im[0]}`,
             footer: `*${botName}*`,
           }, {
             quoted: m,
