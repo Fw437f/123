@@ -18,13 +18,13 @@ module.exports = {
     ];
     let bmffg = {
       image: cosplayImage,
-      caption: `Wer bin ich!!!\n`,
+      caption: `Wer bin ich senpai!!!\n`,
       footer: `*${botName}*`,
       buttons: cosplayButton,
       headerType: 4,
     };
     await Miku.sendMessage(m.from, bmffg, { quoted: m }).catch((err) => {
-      return "fehler!";
+      return "Fehler!";
     });
   },
 };
