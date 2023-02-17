@@ -19,7 +19,7 @@ module.exports = {
     let bmffg = {
       video: VID,
       gifPlayback:true,
-      caption: `Wer bin ich *${pushName}* senpai!!!\n`,
+      caption: `Wer bin ich senpai!!!\n`,
       footer: `*${botName}*`,
       buttons: Button,
       headerType: 4,
