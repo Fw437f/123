@@ -3,7 +3,7 @@ const axios = require('axios');
 module.exports = {
     name: "waifu",
     alias: ["swaifu","wify"],
-    desc: "Get anime girls picture.",
+    desc: "Holen Sie sich ein Anime-Mädchen-Bild.",
     react: "🥵",
     category: "Weeb",
     start: async(Miku, m,{pushName,prefix}) => {
@@ -12,13 +12,13 @@ module.exports = {
 var Button = [
       {
         buttonId: `${prefix}waifu`,
-        buttonText: { displayText: `>>` },
+        buttonText: { displayText: `Weiter...` },
         type: 1,
       },
     ];
     let waf = {
       image: {url:waifus.data.url},
-      caption: `Here I am senpai!!😜`,
+      caption: `Hier bin ich senpai!!😜`,
       footer: `*${botName}*`,
       buttons: Button,
       headerType: 4,
